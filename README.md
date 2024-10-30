@@ -7,7 +7,7 @@ Um blog desenvolvido com Next.js, utilizando o CMS [Hygraph] para adição de no
 <br>
 
 <p align="center">
-  <img src="https://github.com/FelipeMelogomes/FM-BLOG-NEXT/preview.png" width="100%">
+  <img src="https://github.com/FelipeMeloGomes/FM-BLOG-NEXT/blob/main/preview.png" width="100%">
 </p>
 
 ## 🔗 Demonstração
