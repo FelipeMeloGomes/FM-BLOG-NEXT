@@ -95,10 +95,73 @@ export default function Post({ post }: PostProps) {
             <RichText
               content={post.content.json}
               renderers={{
+                h1: ({ children }) => (
+                  <h1 className="text-3xl font-bold text-zinc-900 mt-4">
+                    {children}
+                  </h1>
+                ),
+                h2: ({ children }) => (
+                  <h2 className="text-2xl font-semibold text-zinc-800 mt-3">
+                    {children}
+                  </h2>
+                ),
+                h3: ({ children }) => (
+                  <h3 className="text-xl font-semibold text-zinc-700 mt-2">
+                    {children}
+                  </h3>
+                ),
+                h4: ({ children }) => (
+                  <h4 className="text-lg font-semibold text-zinc-600 mt-2">
+                    {children}
+                  </h4>
+                ),
+                h5: ({ children }) => (
+                  <h5 className="text-base font-semibold text-zinc-500 mt-2">
+                    {children}
+                  </h5>
+                ),
+                h6: ({ children }) => (
+                  <h6 className="text-sm font-semibold text-zinc-400 mt-2">
+                    {children}
+                  </h6>
+                ),
                 p: ({ children }) => (
-                  <p className="text-zinc-600 text-sm sm:text-base text-justify lg:text-left mt-1">
+                  <p className="text-zinc-800 text-base sm:text-lg lg:text-xl text-justify lg:text-left mt-2 leading-relaxed">
                     {children}
                   </p>
+                ),
+                blockquote: ({ children }) => (
+                  <blockquote className="border-l-4 border-zinc-900 pl-4 italic text-zinc-700 my-4">
+                    {children}
+                  </blockquote>
+                ),
+                pre: ({ children }) => (
+                  <pre className="bg-zinc-800 text-white p-4 rounded-md overflow-x-auto my-4">
+                    <code>{children}</code>
+                  </pre>
+                ),
+                ul: ({ children }) => (
+                  <ul className="list-disc list-inside pl-5 mb-2 text-zinc-700">
+                    {children}
+                  </ul>
+                ),
+                ol: ({ children }) => (
+                  <ol className="list-decimal list-inside pl-5 mb-2 text-zinc-700">
+                    {children}
+                  </ol>
+                ),
+                li: ({ children }) => (
+                  <li className="text-zinc-700 text-base sm:text-lg">
+                    {children}
+                  </li>
+                ),
+                strong: ({ children }) => (
+                  <strong className="font-bold text-zinc-900">
+                    {children}
+                  </strong>
+                ),
+                em: ({ children }) => (
+                  <em className="italic text-zinc-600">{children}</em>
                 ),
               }}
             />
