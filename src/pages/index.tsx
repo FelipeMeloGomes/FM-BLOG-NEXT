@@ -7,8 +7,11 @@ import { GET_ALL_POSTS, usePosts } from "@/hooks/usePosts";
 import { client } from "@/lib/apollo";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
-import { HomeProps } from "./types";
+import { Post } from "../components/types";
 
+interface HomeProps {
+  initialPosts: Post[];
+}
 export default function Home({ initialPosts }: HomeProps) {
   const { posts = initialPosts, loading, error } = usePosts();
 

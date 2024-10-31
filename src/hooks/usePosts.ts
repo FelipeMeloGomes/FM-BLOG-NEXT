@@ -23,6 +23,8 @@ export const GET_ALL_POSTS = gql`
   }
 `;
 
+
+
 export function usePosts(): UsePostsReturn {
   const [posts, setPosts] = useState<Post[] | null>(null);
   const [loading, setLoading] = useState(true);

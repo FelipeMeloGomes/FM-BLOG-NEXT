@@ -1,4 +1,4 @@
-import { Post } from "@/pages/types";
+import { Post } from "@/components/types";
 import Image from "next/image";
 import Link from "next/link";
 

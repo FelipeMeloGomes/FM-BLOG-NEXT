@@ -8,7 +8,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { PostProps } from "./types";
+import { PostProps } from "../../types/postTypes";
 
 const GET_POST = gql`
   query GetPost($slugPost: String) {

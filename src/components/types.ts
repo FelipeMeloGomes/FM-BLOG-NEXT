@@ -15,7 +15,3 @@ export interface Post {
   author: Author;
   coverImage: CoverImage;
 }
-
-export interface HomeProps {
-  initialPosts: Post[];
-}
