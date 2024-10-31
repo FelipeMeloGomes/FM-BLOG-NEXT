@@ -1,16 +1,7 @@
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { CardPostsProps } from "@/hooks/types";
 import Image from "next/image";
 import Link from "next/link";
 
-interface CardPostsProps {
-  title: string;
-  subtitle: string;
-  author: string;
-  createdAt: string;
-  urlImage: string;
-  slug: string;
-}
 export default function CardPost({
   author,
   createdAt,
@@ -41,11 +32,7 @@ export default function CardPost({
           <p className="font-bold text-zinc-900 text-sm md:text-base">
             {author}
           </p>
-          <p className="text-zinc-600 text-sm md:text-base">
-            {format(new Date(createdAt), "dd 'de' MMM 'de' yyyy", {
-              locale: ptBR,
-            })}
-          </p>
+          <p className="text-zinc-600 text-sm md:text-base">{createdAt}</p>
         </div>
       </div>
     </Link>

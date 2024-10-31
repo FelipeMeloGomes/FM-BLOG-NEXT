@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="w-full h-28 flex items-center">
+    <header className="w-full h-29 flex items-center">
       <Image
         src="/logo.webp"
         alt="teste"

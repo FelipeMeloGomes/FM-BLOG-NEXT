@@ -2,13 +2,13 @@ import Header from "@/components/header";
 import { client } from "@/lib/apollo";
 import { gql } from "@apollo/client";
 import { RichText } from "@graphcms/rich-text-react-renderer";
-import { ElementNode } from "@graphcms/rich-text-types";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { PostProps } from "./types";
 
 const GET_POST = gql`
   query GetPost($slugPost: String) {
@@ -29,26 +29,7 @@ const GET_POST = gql`
   }
 `;
 
-interface PostProps {
-  post: {
-    id: string;
-    title: string;
-    coverImage: {
-      url: string;
-    };
-    author: {
-      name: string;
-    };
-    createdAt: string;
-    content: {
-      json: ElementNode[];
-    };
-  };
-}
-
 export default function Post({ post }: PostProps) {
-  console.log(post);
-
   return (
     <>
       <Head>
@@ -135,11 +116,7 @@ export default function Post({ post }: PostProps) {
                     {children}
                   </blockquote>
                 ),
-                pre: ({ children }) => (
-                  <pre className="bg-zinc-800 text-white p-4 rounded-md overflow-x-auto my-4">
-                    <code>{children}</code>
-                  </pre>
-                ),
+
                 ul: ({ children }) => (
                   <ul className="list-disc list-inside pl-5 mb-2 text-zinc-700">
                     {children}
@@ -154,14 +131,6 @@ export default function Post({ post }: PostProps) {
                   <li className="text-zinc-700 text-base sm:text-lg">
                     {children}
                   </li>
-                ),
-                strong: ({ children }) => (
-                  <strong className="font-bold text-zinc-900">
-                    {children}
-                  </strong>
-                ),
-                em: ({ children }) => (
-                  <em className="italic text-zinc-600">{children}</em>
                 ),
               }}
             />
