@@ -1,4 +1,4 @@
-<h1 align="center"> FM Burger </h1>
+<h1 align="center"> FM NextBlog </h1>
 
 <p align="center">
 Um blog desenvolvido com Next.js, utilizando o CMS [Hygraph] para adição de novos conteúdos <br/>
